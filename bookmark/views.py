@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.template import Context, loader
 
 def index(request):
-    template = loader.get_template('bookmark/signin.html')
     context = Context({
-            'latest_poll_list': "lkajdsf",
-            })
-    return HttpResponse(template.render(context))
+        'signin':'Bookmark Manager'
+    })
+    return render_to_response('bookmark/signin.djhtml', context)

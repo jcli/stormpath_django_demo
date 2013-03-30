@@ -82,4 +82,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'sitestatic/'
-STATICFILES_DIRS = ("sitestatic/bootstrap/",)
+STATICFILES_DIRS = ( 
+    "/mnt/hgfs/Developer/webstatic",
+)

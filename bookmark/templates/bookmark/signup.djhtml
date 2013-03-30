@@ -57,14 +57,12 @@
     <div class="container">
       <form class="form-signin" action="/bookmark/user/" method="post">
         {% csrf_token %}
-        <h1> {{signin.title}} </h1>
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h1> {{signup.title}} </h1>
+        <h2 class="form-signin-heading">Please sign up</h2>
         <input type="text" class="input-block-level" name="user_email" placeholder="Email address">
         <input type="password" class="input-block-level" name="password" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <input type="password" class="input-block-level" name="password_again" placeholder="Password">
+        <button class="btn btn-large btn-primary" type="submit">Sign up</button>
       </form>
 
     </div> <!-- /container -->

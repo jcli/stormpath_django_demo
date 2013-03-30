@@ -1,0 +1,2 @@
+<img src="{{ STATIC_URL }}IMG_5412.JPG" alt="Hi!" />
+

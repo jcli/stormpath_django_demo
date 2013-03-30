@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bookmark'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,3 +86,6 @@ STATIC_ROOT = 'sitestatic/'
 STATICFILES_DIRS = ( 
     "/mnt/hgfs/Developer/webstatic",
 )
+
+STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
+                       "django.contrib.staticfiles.finders.AppDirectoriesFinder")

@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
 from django import forms
+from stormpath.client import ClientBuilder
 
 def index(request):
     context = Context({

@@ -2,18 +2,18 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import Context, loader, RequestContext
 from django import forms
-from bookmark.bookmark_user import User
 from bookmark.stormpath_admin import Admin
 
 def index(request):
     # check if the user is logged in
     username=request.session.get('user', False);
     if username:
-        print ("logged in as ", username)
-
         # if logged in display bookmark view
-#        return HttpResponse("logged in as " + username.username)
-        return render_to_response('bookmark/user_bookmark.djhtml')
+        context = Context({
+            'bookmark':'Bookmark Manager'
+        })
+        
+        return render_to_response('bookmark/user_bookmark.djhtml', context, context_instance=RequestContext(request))
     else:
         # redirect to the login view
         return HttpResponseRedirect('/bookmark/signin/')
@@ -62,12 +62,12 @@ def user_signout(request):
     #delete the session variable
     request.session.flush()
     return HttpResponseRedirect('/bookmark/')
-    
-def user_view(request):
-    user_email = request.POST['user_email']
-    password = request.POST['password']
 
-    print (user_email)
-    print (password)
-
-    return HttpResponse("thank you")
+def user_save(request):
+    if (request.method=='POST' and request.session.get('user', False)):
+        pass
+        # get user from database
+#        user = 
+        
+    return HttpResponseRedirect('/bookmark/')
+            

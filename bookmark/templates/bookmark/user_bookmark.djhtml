@@ -83,10 +83,15 @@
       <div class="container">
         <div class="page-header">
           <h1>Bookmark</h1>
+        </div>        
+        <form class="form-save" action="/bookmark/save/" method="post">
+          {% csrf_token %}
+          <h3 class="form-save-heading">Enter new link</h3>
+          <input type="text" class="input-block-level" name="new_link" placeholder="new link">
+            <button class="btn btn-large btn-primary" type="submit">Save</button>
+          </form>
         </div>
-        <p class="lead">Enter an link</p>
-      </div>
-
+        
       <div id="push"></div>
     </div>
 

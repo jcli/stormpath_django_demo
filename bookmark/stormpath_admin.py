@@ -34,7 +34,6 @@ class Admin(object):
         for account in application.accounts:
             print ("last name: ", account.given_name)
 
-        result = application.authenticate_account(request)
         try:
             result = application.authenticate_account(request)
             print (result)

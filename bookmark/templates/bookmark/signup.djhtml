@@ -55,7 +55,7 @@
   <body>
 
     <div class="container">
-      <form class="form-signin" action="/bookmark/user/" method="post">
+      <form class="form-signin" action="/bookmark/signup/" method="post">
         {% csrf_token %}
         <h1> {{signup.title}} </h1>
         <h2 class="form-signin-heading">Please sign up</h2>

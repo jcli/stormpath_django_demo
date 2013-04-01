@@ -2,21 +2,24 @@ from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
 from django import forms
-from stormpath.client import ClientBuilder
+from bookmark.bookmark_user import User
+from bookmark.stormpath_admin import Admin
 
 def index(request):
-    httplib2.Http(disable_ssl_certificate_validation=True).request('https://www./')
-    # create stormpath client
-    api_key_file = 'bookmark/stormpath_api_key/apiKey.yml'
-    client = ClientBuilder().set_api_key_file_location(api_key_file).build()
-
-    tenant = client.current_tenant
-
-#    applications = tenant.applications
-    
-    # for app in applications:
-    #     print('Application ' + app.name)
+    # check if the user is logged in
+    username=request.session.get('username', False);
+    if username:
+        print ("logged in as ", username)
+    else:
+        print ("not logged in")
         
+    # if logged in display bookmark view
+
+    # else display login view
+    
+
+    print (Admin.app_url('bookmark_django'))
+    
     context = Context({
         'signin':'Bookmark Manager'
     })

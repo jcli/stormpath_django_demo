@@ -5,6 +5,18 @@ from django import forms
 from stormpath.client import ClientBuilder
 
 def index(request):
+    httplib2.Http(disable_ssl_certificate_validation=True).request('https://www./')
+    # create stormpath client
+    api_key_file = 'bookmark/stormpath_api_key/apiKey.yml'
+    client = ClientBuilder().set_api_key_file_location(api_key_file).build()
+
+    tenant = client.current_tenant
+
+#    applications = tenant.applications
+    
+    # for app in applications:
+    #     print('Application ' + app.name)
+        
     context = Context({
         'signin':'Bookmark Manager'
     })

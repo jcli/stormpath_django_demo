@@ -63,13 +63,8 @@
         <input type="password" class="input-block-level" name="password" placeholder="Password">
         <input type="password" class="input-block-level" name="password_again" placeholder="Password">
         <button class="btn btn-large btn-primary" type="submit">Sign up</button>
+        <p class="signin"><a href="/bookmark/signin">Signin</a></p>
       </form>
-
-      <div id="footer">
-        <div class="container">
-          <p class="signin"><a href="/bookmark/signin">Signin</a></p>
-        </div>
-      </div>
     </div> <!-- /container -->
 
     

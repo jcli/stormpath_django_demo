@@ -65,12 +65,8 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <p class="signup"><a href="/bookmark/signup">Signup</a></p>
       </form>
-      <div id="footer">
-        <div class="container">
-          <p class="signup"><a href="/bookmark/signup">Signup</a></p>
-        </div>
-      </div>
     </div> <!-- /container -->
 
   </body>

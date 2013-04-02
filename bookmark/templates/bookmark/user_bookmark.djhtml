@@ -91,7 +91,15 @@
             <button class="btn btn-large btn-primary" type="submit">Save</button>
           </form>
         </div>
-        
+ 
+        <div class="container">
+          <ul>
+            {% for link in user.link_set.all %}
+            <!-- <li>{{ link.linkPath }}</li> -->
+            <li><a href={{ link.linkPath}}> {{ link.linkPath }}</a></p>
+            {% endfor %}
+            </ul>
+        </div>
       <div id="push"></div>
     </div>
 
